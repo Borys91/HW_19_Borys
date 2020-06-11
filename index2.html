@@ -4,11 +4,44 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+      div{
+         position: absolute;
+         width: 100px;
+         height: 100px;
+         background-color: red;
+      }
+      .div1{
+         top:0px;
+         left:100px;
+      }
+      .div2{
+         top:300px;
+         left:400px;
+      }
+      .div3{
+         top:150px;
+         left:300px;
+      }
+   </style>
 </head>
 <body>
-   
+   <div class="div1"></div>
+   <div class="div2"></div>
+   <div class="div3"></div>
    <script>
-
+      setInterval(move,1000)
+      function move(){
+      let div1 = document.querySelector(".div1")
+      div1.style.left=Math.round(Math.random()*1000)+"px";
+      div1.style.top=Math.round(Math.random()*700)+"px";
+      let div2 = document.querySelector(".div2")
+      div2.style.left=Math.round(Math.random()*1000)+"px";
+      div2.style.top=Math.round(Math.random()*700)+"px";
+      let div3 = document.querySelector(".div3")
+      div3.style.left=Math.round(Math.random()*1000)+"px";
+      div3.style.top=Math.round(Math.random()*700)+"px";
+      }
    </script>
 </body>
 </html>
