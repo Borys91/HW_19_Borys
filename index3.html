@@ -6,6 +6,33 @@
    <title>Document</title>
 </head>
 <body>
-   
+   <div class="div1" style="position: absolute; display: none;">Lorem ipsum dolor sit amet.</div>
+   <input type="button" value="UP" id="up" onclick="moveUp()">
+   <input type="button" value="DOWN" id="down" onclick="moveDown()">
+   <input type="button" value="LEFT" id="left" onclick="moveLeft()">
+   <input type="button" value="RIGHT" id="right" onclick="moveRight()">
+   <script>
+      let leftPos=0;upPos=0
+      function moveUp(){
+         upPos-=100;
+         document.querySelector(".div1").style.display="block"
+         document.querySelector(".div1").style.top=upPos+"px"
+      }
+      function moveDown(){
+         upPos+=100;
+         document.querySelector(".div1").style.display="block"
+         document.querySelector(".div1").style.top=upPos+"px"
+      }
+      function moveLeft(){
+         leftPos-=100;
+         document.querySelector(".div1").style.display="block"
+         document.querySelector(".div1").style.left=leftPos+"px"
+      }
+      function moveRight(){
+         leftPos+=100;
+         document.querySelector(".div1").style.display="block"
+         document.querySelector(".div1").style.left=leftPos+"px"
+      }
+   </script>
 </body>
 </html>
