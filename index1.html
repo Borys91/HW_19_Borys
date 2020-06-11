@@ -6,10 +6,35 @@
    <title>Document</title>
 </head>
 <body>
-   
+   <input type="text" id="text" onkeyup="input()" value="" placeholder="Угадайте число от 1 до 100" autocomplete="off" style="width:200px;height:30px;">
    <script>
-     
-     
+     let number = Math.round(Math.random()*100);
+     console.log(number)
+     function input(){
+      let  textValue= document.getElementById("text").value
+      if (number>textValue && textValue>=1 ){
+         let paragraph = document.createElement("P");
+         paragraph.innerHTML="Значение меньше заданного"
+         document.body.appendChild(paragraph)
+      }
+      else if(number<textValue && textValue<=100){
+         let paragraph = document.createElement("P");
+         paragraph.innerHTML="Значение больше заданного"
+         document.body.appendChild(paragraph)
+      }
+      else if(number==textValue){
+         let paragraph = document.createElement("P");
+         paragraph.innerHTML="Вы угадали загаданное значение"
+         paragraph.style.color="red"
+         document.body.appendChild(paragraph)
+      }
+      else{
+         let paragraph = document.createElement("P");
+         paragraph.innerHTML="Вы ввели не корректные данные"
+         document.body.appendChild(paragraph)
+      }
+     }
+
    </script>
 </body>
 </html>
